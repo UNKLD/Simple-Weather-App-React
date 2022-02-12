@@ -7,20 +7,20 @@ function App() {
   const [photos, setPhotos] = useState([]);
 
   const weather = async () => {
-    // Fetching weather Data
+    // Fetching weather Data from openweather.org
     try {
       const res = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID=6f29b335b91ab50b166193a109b60c43&units=metric`
+        `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID={API_KEY}&units=metric`
       );
       const data = await res.json();
       setWeatherData(await data);
     } catch (error) {
       console.log(error);
     }
-    //Fetching location Image
+    //Fetching location Image from unsplash.com
     try {
       const res = await fetch(
-        `https://api.unsplash.com/search/photos?query=${locations}&client_id=dtWfpSQIjfK1LeekqsEA_Gz_w7OWfVxwOheNYgVneHw`
+        `https://api.unsplash.com/search/photos?query=${locations}&client_id={API_KEY}`
       );
       const data = res.ok && (await res.json());
       setPhotos(data?.results[0]?.urls?.raw);
