@@ -64,6 +64,7 @@ function App() {
               </div>
             </div>
             <div className="card-icon">
+              {/* Weather icon fom openweather.org */}
               <img
                 src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`}
                 width={200}
