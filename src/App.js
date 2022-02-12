@@ -39,17 +39,17 @@ function App() {
 
   return (
     <div className="App">
-      {weatherData && weatherData.weather && (
-        <header className="App-header">
-          <div className="findCity">
-            <input
-              type="text"
-              required
-              value={locations}
-              onChange={(e) => setLocations(e.target.value)}
-            />
-            <button onClick={handleClick}>Submit</button>
-          </div>
+      <header className="App-header">
+        <div className="findCity">
+          <input
+            type="text"
+            required
+            value={locations}
+            onChange={(e) => setLocations(e.target.value)}
+          />
+          <button onClick={handleClick}>Submit</button>
+        </div>
+        {weatherData && weatherData.weather && (
           <div className="card">
             <div className="card-img">
               <img height={200} width={300} src={photos} alt={photos.toString()} />
@@ -73,8 +73,8 @@ function App() {
               />
             </div>
           </div>
-        </header>
-      )}
+        )}
+      </header>
     </div>
   );
 }
